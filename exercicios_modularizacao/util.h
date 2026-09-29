@@ -60,5 +60,14 @@ int contarVogais(string frase){ // retorna para o codigo
         }
     }
 
+
+string converter_para_maiusculo(string frase){
+    for (int i = 0; i < frase.size(); i++) {
+        frase[i] = toupper(frase[i]);
+    }   
+    
+    return frase;
+}
+
     return contador;
 }
