@@ -36,6 +36,20 @@ void receberdata(string sdia, string smes, string sano){ // nao retorna
     } else {
         cout << "Data valida" << endl;
     }
+
+
+string extrairPrimeiroNome(string nomeCompleto) {
+    string primeiroNome = "";
+
+    for (int i = 0; i < nomeCompleto.size(); i++) {
+        if (nomeCompleto[i] == ' ') {
+            break; 
+        }
+        primeiroNome += nomeCompleto[i];
+    }
+
+    return primeiroNome;
+}
 }
 
 
