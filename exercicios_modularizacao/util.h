@@ -71,3 +71,12 @@ string converter_para_maiusculo(string frase){
 
     return contador;
 }
+
+bool estaOrdenado(int vetor[], int tamanho){
+    for(int i = 0; i < tamanho - 1; i++){
+        if (vetor[i] > vetor[i + 1]) {
+            return false; 
+        }
+    }
+    return true;
+}
