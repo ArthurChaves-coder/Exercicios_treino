@@ -1,4 +1,4 @@
-void receberPalavraLetra(string palavra, char letra){
+void receberPalavraLetra(string palavra, char letra){ // nao retorna
     cout << "digite a palavra: ";
     cin >> palavra;
 
@@ -15,7 +15,7 @@ void receberPalavraLetra(string palavra, char letra){
     cout << "A letra '" << letra << "' aparece " << contador << " vez(es) na palavra \"" << palavra << "\".\n";
 }
 
-void receberdata(string sdia, string smes, string sano){
+void receberdata(string sdia, string smes, string sano){ // nao retorna
     cout << "escreva o dia: ";
     cin >> sdia;
 
@@ -36,4 +36,29 @@ void receberdata(string sdia, string smes, string sano){
     } else {
         cout << "Data valida" << endl;
     }
+}
+
+
+int contarVogais(string frase){ // retorna para o codigo
+    int contador = 0;
+
+    for(int i = 0; i < frase.size(); i++){
+        if (frase[i] == 'a' || frase[i] == 'A') {
+            contador++;
+        }
+        else if (frase[i] == 'e' || frase[i] == 'E') {
+            contador++;
+        }
+        else if (frase[i] == 'i' || frase[i] == 'I') {
+            contador++;
+        }
+        else if (frase[i] == 'o' || frase[i] == 'O') {
+            contador++;
+        }
+        else if (frase[i] == 'u' || frase[i] == 'U') {
+            contador++;
+        }
+    }
+
+    return contador;
 }
