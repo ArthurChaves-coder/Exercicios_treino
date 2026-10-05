@@ -94,3 +94,35 @@ bool estaOrdenado(int vetor[], int tamanho){
     }
     return true;
 }
+
+bool existeArquivo(string nomeArquivo) { 
+    ifstream arquivo;
+    arquivo.open(nomeArquivo);
+    if(!arquivo) { // se arquivo nao existe, retorna falso
+        return false;
+    }
+    arquivo.close();
+    return true;
+}
+
+void exibirQuantasPalavrasArquivo(string palavra, string nomeArquivo) {
+    ifstream arquivo;
+    int contador = 0;
+    string palavraAtual;
+    arquivo.open(nomeArquivo);
+
+    while (arquivo >> palavraAtual) {
+        if (palavraAtual == palavra) {
+            contador++;
+        }
+    }
+    cout << "Quantidade de " << palavra << " localizadas no arquivo: " << contador << endl;
+
+    arquivo.close();
+}
+
+
+
+bool validarCPF(string CPF){
+    return CPF.length() == 11;
+}
