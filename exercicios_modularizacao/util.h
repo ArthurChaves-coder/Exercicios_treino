@@ -134,3 +134,16 @@ bool retorneData(string data) {
         return true;
     }
 }
+
+string gerarEmail(string nomeCompleto) {
+    string primeiroNome;
+    string ultimoNome;
+
+    int posicaoEspaco = nomeCompleto.find(' ');
+    primeiroNome = nomeCompleto.substr(0, posicaoEspaco);
+
+    int ultimoEspaco = nomeCompleto.find_last_of(' ');
+    ultimoNome = nomeCompleto.substr(ultimoEspaco + 1);
+
+    return primeiroNome + "." + ultimoNome + "@ufn.edu.br";
+}
