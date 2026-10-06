@@ -9,8 +9,6 @@ using namespace std;
 #include "util.h"
 
 int main(){
-    string converter_para_maiusculo(string frase);
-
     string frase;
     cout << "Digite uma frase: ";
     getline(cin, frase);

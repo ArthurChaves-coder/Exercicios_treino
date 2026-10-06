@@ -9,9 +9,6 @@ using namespace std;
 #include "util.h"
 
 int main(){
-
-    bool estaOrdenado(int vetor[], int tamanho);
-
     int vetor[100];
     int tamanho;
 

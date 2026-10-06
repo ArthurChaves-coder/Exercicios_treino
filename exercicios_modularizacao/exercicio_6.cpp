@@ -9,8 +9,6 @@ using namespace std;
 #include "util.h"
 
 int main(){
-    string extrairPrimeiroNome(string nomeCompleto);
-
     string nomeCompleto;
     cout << "Digite seu nome completo: ";
     getline(cin, nomeCompleto); 

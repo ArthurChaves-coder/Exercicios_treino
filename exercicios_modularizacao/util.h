@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
 void receberPalavraLetra(string palavra, char letra){ // nao retorna
     cout << "digite a palavra: ";
     cin >> palavra;
@@ -25,7 +32,7 @@ void receberdata(string sdia, string smes, string sano){ // nao retorna
     cout << "escreva o ano: ";
     cin >> sano;
 
-    int dia = stoi(sdia);
+    int dia = stoi(sdia); // stoi serve para converter string para inteiro
     int mes = stoi(smes);
     int ano = stoi(sano);
 
@@ -36,6 +43,7 @@ void receberdata(string sdia, string smes, string sano){ // nao retorna
     } else {
         cout << "Data valida" << endl;
     }
+}
 
 
 string extrairPrimeiroNome(string nomeCompleto) {
@@ -50,7 +58,7 @@ string extrairPrimeiroNome(string nomeCompleto) {
 
     return primeiroNome;
 }
-}
+
 
 
 int contarVogais(string frase){ // retorna para o codigo
@@ -73,6 +81,8 @@ int contarVogais(string frase){ // retorna para o codigo
             contador++;
         }
     }
+    return contador;
+}
 
 
 string converter_para_maiusculo(string frase){
@@ -81,9 +91,6 @@ string converter_para_maiusculo(string frase){
     }   
     
     return frase;
-}
-
-    return contador;
 }
 
 bool estaOrdenado(int vetor[], int tamanho){
@@ -146,4 +153,57 @@ string gerarEmail(string nomeCompleto) {
     ultimoNome = nomeCompleto.substr(ultimoEspaco + 1);
 
     return primeiroNome + "." + ultimoNome + "@ufn.edu.br";
+}
+
+// daqui pra baixo, apenas feitos em casa, nao em aula
+
+bool ehPar(int numero) {
+    if(numero % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int contarCaracteres(string texto) {
+    int contador = 0;
+    for(int i = 0; i < texto.size(); i++) {
+        if(texto[i] != ' ') {
+            contador++;
+        }
+    }
+    return contador;
+    // se quiser retornar tudo que tem no texto, com pontos e espaços, apenas colocar return texto.size();
+}
+
+int contarLinhasArquivo(string nomeArquivo) {
+    ifstream arquivo;
+    int contador = 0;
+    string linhalida;
+    arquivo.open(nomeArquivo);
+    if(!arquivo) {
+        return -1; // Retorna -1 se o arquivo não puder ser aberto
+    } else {
+        while (getline(arquivo, linhalida)) {
+            contador++;
+        }
+        arquivo.close();
+    }
+    return contador;
+}
+
+int somarNumerosArquivo(string nomeArquivo) {
+    ifstream arquivo;
+    int soma = 0;
+    int numero_atual = 0;
+    arquivo.open(nomeArquivo);
+    if(!arquivo) {
+        return -1; // Retorna -1 se o arquivo não puder ser aberto
+    } else {
+        while (arquivo >> numero_atual) { // extraçao de dados, procura numeros inteiros dentro do texto, ignorando os demais caracteres.
+            soma += numero_atual;
+        }
+        arquivo.close();
+    }
+    return soma;
 }
