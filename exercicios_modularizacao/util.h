@@ -1,3 +1,10 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
 void receberPalavraLetra(string palavra, char letra){ // nao retorna
     cout << "digite a palavra: ";
     cin >> palavra;
@@ -36,6 +43,7 @@ void receberdata(string sdia, string smes, string sano){ // nao retorna
     } else {
         cout << "Data valida" << endl;
     }
+}
 
 
 string extrairPrimeiroNome(string nomeCompleto) {
@@ -50,7 +58,7 @@ string extrairPrimeiroNome(string nomeCompleto) {
 
     return primeiroNome;
 }
-}
+
 
 
 int contarVogais(string frase){ // retorna para o codigo
@@ -73,6 +81,8 @@ int contarVogais(string frase){ // retorna para o codigo
             contador++;
         }
     }
+    return contador;
+}
 
 
 string converter_para_maiusculo(string frase){
@@ -81,9 +91,6 @@ string converter_para_maiusculo(string frase){
     }   
     
     return frase;
-}
-
-    return contador;
 }
 
 bool estaOrdenado(int vetor[], int tamanho){
