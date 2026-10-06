@@ -126,3 +126,11 @@ void exibirQuantasPalavrasArquivo(string palavra, string nomeArquivo) {
 bool validarCPF(string CPF){
     return CPF.length() == 11;
 }
+
+bool retorneData(string data) {
+    if (data.length() != 8) {
+        return false;
+    } else {
+        return true;
+    }
+}
