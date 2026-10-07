@@ -207,3 +207,13 @@ int somarNumerosArquivo(string nomeArquivo) {
     }
     return soma;
 }
+
+string retornaFrase(string frase, char caractere){
+    int i;
+    for(i = 0; i < frase.size(); i ++){
+        if(frase[i] == caractere){
+            frase[i] = '@';
+        }
+    }
+    return frase;
+}
