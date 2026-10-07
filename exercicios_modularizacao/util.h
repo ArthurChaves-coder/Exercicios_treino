@@ -218,11 +218,3 @@ string retornaFrase(string frase, char caractere){
     return frase;
 }
 
-int retornaPalavras(string frase){
-    int i = 0;
-    int contador = 0;
-    if(frase[i] == ' '){
-        contador++;
-    } 
-    return contador;
-}
