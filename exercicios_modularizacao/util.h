@@ -218,3 +218,69 @@ string retornaFrase(string frase, char caractere){
     return frase;
 }
 
+int vezesPalavra(string nomeArquivo, string buscaPalavra) { // quantas vezes uma palavra aparece em um arquivo;
+    ifstream arquivo;
+    int contador = 0;
+
+    arquivo.open(nomeArquivo);
+    if (!arquivo) {
+        return -1;
+    } else {
+        string linhaLida;
+
+        while (getline(arquivo, linhaLida)) {
+            int tamanhoLinha = linhaLida.length();
+            int tamanhoPalavra = buscaPalavra.length();
+            bool encontrou = false;
+
+            // Percorre cada posição possível da linha
+            for (int i = 0; i <= tamanhoLinha - tamanhoPalavra; i++) {
+                bool bateu = true;
+
+                // Compara caractere por caractere a partir da posição 'i'
+                for (int j = 0; j < tamanhoPalavra; j++) {
+                    if (linhaLida[i + j] != buscaPalavra[j]) {
+                        bateu = false;
+                        break; // Se um caractere for diferente, para de testar essa posição
+                    }
+                }
+
+                // Se todos os caracteres bateram, encontramos a palavra na linha!
+                if (bateu) {
+                    encontrou = true;
+                    break; // Passa para a próxima linha
+                }
+            }
+
+            if (encontrou) {
+                contador++;
+            }
+        }
+
+        arquivo.close();
+    }
+
+    return contador;
+}
+
+int contaMaioresQueDez(string nomeArquivo){
+    int i;
+    int contador = 0;
+    int numero_atual= 0;
+    ifstream arquivo;
+
+    arquivo.open(nomeArquivo);
+    if(!arquivo){
+        return -1;
+    } else{
+
+        while(arquivo >> numero_atual){
+            if(numero_atual > 10){
+                contador++;
+            }
+        }
+    }
+
+    arquivo.close();
+    return contador;
+}
