@@ -11,6 +11,12 @@ int main(){
     string palavra ;
     char letra;
 
+    cout << "digite a palavra: ";
+    cin >> palavra;
+
+    cout << "digite a letra: ";
+    cin >> letra;
+
     receberPalavraLetra(palavra, letra);
 
     return 0;

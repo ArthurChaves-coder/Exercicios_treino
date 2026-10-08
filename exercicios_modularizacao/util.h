@@ -6,12 +6,6 @@
 using namespace std;
 
 void receberPalavraLetra(string palavra, char letra){ // nao retorna
-    cout << "digite a palavra: ";
-    cin >> palavra;
-
-    cout << "digite a letra: ";
-    cin >> letra;
-
     int contador = 0;
     for (int i=0; i < palavra.size(); i++){
         if(palavra[i] == letra){
@@ -23,15 +17,7 @@ void receberPalavraLetra(string palavra, char letra){ // nao retorna
 }
 
 void receberdata(string sdia, string smes, string sano){ // nao retorna
-    cout << "escreva o dia: ";
-    cin >> sdia;
-
-    cout << "escreva o mes: ";
-    cin >> smes;
-
-    cout << "escreva o ano: ";
-    cin >> sano;
-
+    
     int dia = stoi(sdia); // stoi serve para converter string para inteiro
     int mes = stoi(smes);
     int ano = stoi(sano);
@@ -281,6 +267,38 @@ int contaMaioresQueDez(string nomeArquivo){
         }
     }
 
+    arquivo.close();
+    return contador;
+}
+
+bool retornaSeMaiorQueCinco(string palavra){
+    return palavra.length() > 5; // se for verdadeiro retorna isso, se nao, retorna falso.
+}
+
+char PrimeiraLetra_(string palavra){
+   return palavra[0];
+}
+
+bool ehNegativo(int numero){
+    if(numero < 0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int contarNumerosArquivo(string nomeArquivo){
+    ifstream arquivo;
+    int contador = 0;
+    int numeroAtual = 0;
+    arquivo.open(nomeArquivo);
+    if(!arquivo) {
+        return -1; 
+    } else {
+        while (arquivo >> numeroAtual) {
+            contador++;
+        }
+    }
     arquivo.close();
     return contador;
 }
