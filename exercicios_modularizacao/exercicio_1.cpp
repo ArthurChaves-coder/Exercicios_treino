@@ -17,7 +17,7 @@ int main(){
     cout << "digite a letra: ";
     cin >> letra;
 
-    receberPalavraLetra(palavra, letra);
+    receberPalavraLetra(palavra, letra); // cout escrito la dentro do util.h
 
     return 0;
 }

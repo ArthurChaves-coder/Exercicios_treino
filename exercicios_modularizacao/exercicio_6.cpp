@@ -13,9 +13,8 @@ int main(){
     cout << "Digite seu nome completo: ";
     getline(cin, nomeCompleto); 
 
-    string apenasPrimeiro = extrairPrimeiroNome(nomeCompleto);
-
-    cout << "O primeiro nome e: " << apenasPrimeiro << endl;
+   
+    cout << "O primeiro nome e: " << extrairPrimeiroNome(nomeCompleto) << endl;
 
     return 0;
 }

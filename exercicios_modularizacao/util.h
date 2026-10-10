@@ -39,7 +39,7 @@ string extrairPrimeiroNome(string nomeCompleto) {
         if (nomeCompleto[i] == ' ') {
             break; 
         }
-        primeiroNome += nomeCompleto[i];
+        primeiroNome = primeiroNome + nomeCompleto[i];
     }
 
     return primeiroNome;
@@ -301,4 +301,39 @@ int contarNumerosArquivo(string nomeArquivo){
     }
     arquivo.close();
     return contador;
+}
+
+int retornaQuadrado(int numero){
+    return numero * numero;
+}
+
+void saudacao(string nome){
+    cout << "ola " << nome << ", seja bem vindo(a)!\n";
+}
+
+int devolveSoma(int numero){ // somar 1+2+3+4+5...
+    int soma = 0;
+    for(int i = 1; i<= numero; i++){
+        soma = soma + i;
+    }
+    return soma;
+}
+
+bool apareceNaPalavra(string palavra, char letra){
+    for(int i = 0; i < palavra.size(); i ++){
+        if(palavra[i] == letra){
+            return true;
+        }
+    }
+    return false;
+}
+
+void gravaSequencia(int numero){
+    ofstream arquivo("sequencia.txt");   // 1. abre
+
+    for(int i = 1; i <= numero; i++){
+        arquivo << i << "\n";            // 2. escreve
+    }
+
+    arquivo.close();                     // 3. fecha (depois do laço)
 }

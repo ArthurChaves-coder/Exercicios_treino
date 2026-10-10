@@ -13,9 +13,7 @@ int main(){
     cout << "Digite uma frase: ";
     getline(cin, frase);
 
-    string fraseMaiuscula = converter_para_maiusculo(frase);
-
-    cout << "Frase em maiuscula: " << fraseMaiuscula << endl;
+    cout << "Frase em maiuscula: " << converter_para_maiusculo(frase)<< endl;
 
     return 0;
 }
