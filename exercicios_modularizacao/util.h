@@ -337,3 +337,167 @@ void gravaSequencia(int numero){
 
     arquivo.close();                     // 3. fecha (depois do laço)
 }
+
+void escreveNumero(int numero){
+    ofstream arquivo("numero.txt");
+    for(int i = 1; i <= numero; i ++){
+        arquivo << i << "\n";
+    }
+    arquivo.close();
+}
+
+void voltaNomeIdade(string nome, int idade){
+    ofstream arquivo("pessoa.txt");
+    arquivo << "Nome: " << nome << ". Idade: " << idade;
+
+    arquivo.close();
+}
+
+int escreveNumero2(int numero){
+    int soma = 0;
+    ofstream arquivo("numeros.txt");
+
+    for(int i = 1; i <= numero; i++){
+        arquivo << i << "\n";
+        
+        soma = soma + i;
+    }
+    arquivo.close();
+    return soma;
+}
+
+string converterMaiusculo(string frase){
+    for(int i = 0; i < frase.size(); i++){
+        frase[i] = toupper(frase[i]);
+    }
+
+    return frase;
+}
+
+int contarPalavras(string frase){
+    int espacos = 0;
+
+    for(int i = 0; i < frase.size(); i++){
+        if(frase[i] == ' '){
+            espacos++;
+        }
+    }
+
+    return espacos + 1;
+}
+
+string lerArquivo(string nomeArquivo){ // função usada muito para ler o arquivo e depois fazer a operação que precisar
+    ifstream arquivo(nomeArquivo);
+    string conteudo = "";
+    string linha;
+
+    while(getline(arquivo, linha)){
+        conteudo = conteudo + linha + "\n";
+    }
+
+    arquivo.close();
+    return conteudo;
+}
+
+bool arquivoExiste(string nomeArquivo){ // daqui
+    ifstream arquivo(nomeArquivo);
+
+    if(arquivo.is_open()){
+        arquivo.close();
+        return true;
+    }
+
+    return false;
+}
+
+string lerArquivo(string nomeArquivo){
+    ifstream arquivo(nomeArquivo);
+    string conteudo = "";
+    string linha;
+
+    while(getline(arquivo, linha)){
+        conteudo = conteudo + linha + "\n";
+    }
+
+    arquivo.close();
+    return conteudo;
+}
+
+string substituirLetra(string texto, char letra){
+    for(int i = 0; i < texto.size(); i++){
+        if(texto[i] == letra){
+            texto[i] = '@';
+        }
+    }
+
+    return texto;
+}
+
+string substituirLetraArquivo(string nomeArquivo, char letra){
+    string conteudo = lerArquivo(nomeArquivo);
+    return substituirLetra(conteudo, letra);
+}
+ 
+// ate aqui, um exercicio apenas
+
+bool arquivoExiste(string nomeArquivo){
+    ifstream arquivo(nomeArquivo);
+
+    if(arquivo.is_open()){
+        arquivo.close();
+        return true;
+    }
+
+    return false;
+}
+
+string lerArquivo(string nomeArquivo){
+    ifstream arquivo(nomeArquivo);
+    string conteudo = "";
+    string linha;
+
+    while(getline(arquivo, linha)){
+        conteudo = conteudo + linha + "\n";
+    }
+
+    arquivo.close();
+    return conteudo;
+}
+
+string converterMaiusculo(string texto){
+    for(int i = 0; i < texto.size(); i++){
+        texto[i] = toupper(texto[i]);
+    }
+
+    return texto;
+}
+
+int contarPalavras(string texto){
+    int contador = 0;
+    bool dentroDePalavra = false;
+
+    for(int i = 0; i < texto.size(); i++){
+        bool separador = (texto[i] == ' ' || texto[i] == '\n' || texto[i] == '\t');
+
+        if(!separador){
+            if(!dentroDePalavra){
+                contador++;
+                dentroDePalavra = true;
+            }
+        } else {
+            dentroDePalavra = false;
+        }
+    }
+
+    return contador;
+}
+
+string maiusculoArquivo(string nomeArquivo){
+    string conteudo = lerArquivo(nomeArquivo);
+    return converterMaiusculo(conteudo);
+}
+
+int contarPalavrasArquivo(string nomeArquivo){
+    string conteudo = lerArquivo(nomeArquivo);
+    return contarPalavras(conteudo);
+}
