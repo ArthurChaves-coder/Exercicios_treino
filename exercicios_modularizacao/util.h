@@ -132,11 +132,11 @@ string gerarEmail(string nomeCompleto) {
     string primeiroNome;
     string ultimoNome;
 
-    int posicaoEspaco = nomeCompleto.find(' ');
-    primeiroNome = nomeCompleto.substr(0, posicaoEspaco);
+    int posicaoEspaco = nomeCompleto.find(' '); // procura o primeiro espaço
+    primeiroNome = nomeCompleto.substr(0, posicaoEspaco); // substr recorta uma string
 
-    int ultimoEspaco = nomeCompleto.find_last_of(' ');
-    ultimoNome = nomeCompleto.substr(ultimoEspaco + 1);
+    int ultimoEspaco = nomeCompleto.find_last_of(' '); // procura o ultimo espaço
+    ultimoNome = nomeCompleto.substr(ultimoEspaco + 1); 
 
     return primeiroNome + "." + ultimoNome + "@ufn.edu.br";
 }
