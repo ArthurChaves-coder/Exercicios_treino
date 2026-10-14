@@ -383,7 +383,7 @@ int contarPalavras(string frase){
         }
     }
 
-    return espacos + 1;
+    return espacos + 1; // espaço + 1, função que serve para contar quantas palavras tem em uma frase.
 }
 
 string lerArquivo(string nomeArquivo){ // função usada muito para ler o arquivo e depois fazer a operação que precisar
