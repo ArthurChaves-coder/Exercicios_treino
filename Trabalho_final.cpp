@@ -124,7 +124,7 @@ bool remover(vector<Carta>& cartas) {
     return false;
 }
  
-// cada carta ocupa 4 linhas no arquivo: nome, colecao, estado e preco
+
 void carregarBase(string nomeBase, vector<Carta>& cartas) {
     ifstream arquivo;
     arquivo.open(nomeBase);
@@ -164,7 +164,7 @@ void atualizarBase(vector<Carta> cartas, string nomeBase) {
 }
  
 void ordenar(vector<Carta>& cartas) {
-    //usando o bubble sort ou bolha, ordenando pelo nome
+    
     Carta tmp;
     bool houveTroca;
     int tamanho = cartas.size();
@@ -186,7 +186,7 @@ int main() {
     int opcao;
     string nomeBase = "cartas.txt";
  
-    //carregar a base de dados para a estrutura cartas
+    
     carregarBase(nomeBase, cartas);
  
     do {
@@ -208,9 +208,9 @@ int main() {
         switch (opcao) {
             case 1:
                 if (inserir(cartas)) {
-                    //ordenar o vetor
+                    
                     ordenar(cartas);
-                    //atualizar base de dados
+                    
                     atualizarBase(cartas, nomeBase);
                 }
                 break;
@@ -222,7 +222,6 @@ int main() {
                 break;
             case 4:
                 if (remover(cartas)) {
-                    //atualizar base de dados
                     atualizarBase(cartas, nomeBase);
                 }
                 break;
