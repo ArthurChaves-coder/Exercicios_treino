@@ -163,24 +163,6 @@ void atualizarBase(vector<Carta> cartas, string nomeBase) {
     arquivo.close();
 }
  
-void ordenar(vector<Carta>& cartas) {
-    
-    Carta tmp;
-    bool houveTroca;
-    int tamanho = cartas.size();
-    do {
-        houveTroca = false;
-        for (int i = 0; i < tamanho - 1; i++) {
-            if (cartas[i].nome > cartas[i+1].nome) {
-                houveTroca = true;
-                tmp = cartas[i];
-                cartas[i] = cartas[i+1];
-                cartas[i+1] = tmp;
-            }
-        }
-    } while (houveTroca);
-}
- 
 int main() {
     vector<Carta> cartas;
     int opcao;
@@ -208,9 +190,6 @@ int main() {
         switch (opcao) {
             case 1:
                 if (inserir(cartas)) {
-                    
-                    ordenar(cartas);
-                    
                     atualizarBase(cartas, nomeBase);
                 }
                 break;
